@@ -2,18 +2,17 @@
 
 export function solvePuzzle1(input: string): [number, number] {
 
-    let data: string[] = input.split('\n');
-    let curr = 0, calories = [];
-    data.forEach(x => {
+    let curr = 0, totals = [];
+    input.split('\n').forEach(x => {
         if (x === '') {
-            calories.push(curr);
+            totals.push(curr);
             curr = 0;
         } else {
             curr += +x;
         }
     });
-    calories.sort((a, b) => b-a);
+    totals.sort((a, b) => b-a);
 
-    return [calories[0], calories[0] + calories[1] + calories[2]];
+    return [totals[0], totals[0] + totals[1] + totals[2]];
 
 }
