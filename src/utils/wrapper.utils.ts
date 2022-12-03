@@ -23,6 +23,8 @@ export class Wrapper {
                 return Puzzles.solvePuzzle1(input);
             case 2:
                 return Puzzles.solvePuzzle2(input);
+            case 3:
+                return Puzzles.solvePuzzle3(input);
             default:
                 return [0,0];
         }
