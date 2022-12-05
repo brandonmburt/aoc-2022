@@ -26,7 +26,9 @@ export class Wrapper {
             case 3:
                 return Puzzles.solvePuzzle3(input);
             case 4:
-                    return Puzzles.solvePuzzle4(input);
+                return Puzzles.solvePuzzle4(input);
+            case 5:
+                return Puzzles.solvePuzzle5(input);
             default:
                 return [0,0];
         }
