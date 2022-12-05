@@ -8,7 +8,6 @@ export function solvePuzzle5(input: string): [string, string] {
         if (!initalized) {
             if (row[1] === '1') { // indicates stack input has been parsed
                 initalized = true;
-                stacks = stacks.map(s => s.reverse());
                 p2Stacks = stacks.map(s => s.slice());
                 return;
             }
@@ -18,7 +17,7 @@ export function solvePuzzle5(input: string): [string, string] {
             }
             for (let i=0; i<arr.length; i++) {
                 if (!stacks[i]) stacks.push([]); // initialize empty arrays if not present
-                if (arr[i] !== ' ') stacks[i].push(arr[i]);
+                if (arr[i] !== ' ') stacks[i].unshift(arr[i]);
             }
         } else {
             const arr = row.split(' ');
