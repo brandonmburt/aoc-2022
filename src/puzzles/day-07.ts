@@ -42,14 +42,10 @@ export function solvePuzzle7(input: string): [number, number] {
     let dirArr = [root], storage = 70000000 - root.totalSize;
     let p1 = 0, p2 = root.totalSize;
     while (dirArr.length > 0) {
-        let temp = [];
-        while (dirArr.length > 0) {
-            let d = dirArr.pop();
-            p2 = storage + d.totalSize >= 30000000 ? Math.min(d.totalSize, p2) : p2;
-            p1 += d.totalSize <= 100000 ? d.totalSize : 0;
-            temp.push(...d.dirs);
-        }
-        dirArr = temp;
+        let d = dirArr.pop();
+        p2 = storage + d.totalSize >= 30000000 ? Math.min(d.totalSize, p2) : p2;
+        p1 += d.totalSize <= 100000 ? d.totalSize : 0;
+        dirArr.push(...d.dirs);
     }
 
     return [p1, p2];
